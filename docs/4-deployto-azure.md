@@ -38,3 +38,43 @@ Once the secrets are configured, the GitHub Actions will be triggered for every 
 ![](/images/runworkflow.png)
 
 [Next](/docs/5-add-Identity.md)
+
+# Deploy the app manually (Without Github Actions).
+
+Do an npm install and npm run build like so:
+```
+cd ./src
+npm install
+npm run build --if-present
+cd ..
+```
+Copy standalone into the root
+```
+cp -R ./src/.next/standalone ./site-deploy
+```
+Copy static into the .next folder
+```
+cp -R ./src/.next/static ./site-deploy/.next/static
+```
+Copy Public folder
+```
+cp -R ./src/public ./site-deploy/public
+```
+Create a zip of your Next application
+```
+cd ./site-deploy
+zip Nextjs-site.zip ./* .next -qr
+```
+Deploy to a Web App via REST API cURL command or using Azure CLI
+```
+az functionapp deployment source config-zip -g <resource_group> -n \
+<app_name> --src Nextjs-site.zip
+```
+or
+```
+curl -X POST \
+    --data-binary "@Nextjs-site.zip" \
+    -H "Authorization: Bearer <access_token>" \
+    "https://<app_name>.scm.azurewebsites.net/api/zipdeploy"
+```
+That's it!
