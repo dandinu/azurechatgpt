@@ -6,6 +6,23 @@ The following steps describes how ChatGPT on Azure solution accelerator can be d
 
 Fork this repository to your own organisation so that you can execute GitHub Actions against your own Azure Subscription.
 
+1. Clone the `.env.local` file and name it `.env.production` to store the production environment variables. Modify the `NEXTAUTH_URL` variable with your azure App Service URL:
+
+```
+NEXTAUTH_URL=https://<APP NAME>.azurewebsites.net
+```
+
+# Check environment variables on Azure too
+You need to make sure that the environment variables from your `env.production` file are set there, too. If you don't, then your app on Azure won't be able to authenticate with GitHub/AD correctly.
+
+On Azure App Service -
+
+Open the Azure portal
+Navigate to your `app service`
+Open the settings menu and select `Configuration`
+In the `Application settings` tab, add new entries for `AUTH_GITHUB_ID` and `AUTH_GITHUB_SECRET` or any other environment variables you are missing, under App settings, and save the changes
+Remember to keep these variables secure - they provide access to your GitHub/AD app and should not be disclosed publicly.
+
 # 🗝️ Configure secrets in your GitHub repository
 
 ### 1. AZURE_CREDENTIALS
@@ -36,8 +53,6 @@ Under the same repository secrets add a new variable `AZURE_APP_SERVICE_NAME` to
 Once the secrets are configured, the GitHub Actions will be triggered for every code push to the repository. Alternatively, you can manually run the workflow by clicking on the "Run Workflow" button in the Actions tab in GitHub.
 
 ![](/images/runworkflow.png)
-
-[Next](/docs/5-add-Identity.md)
 
 # Deploy the app manually (Without Github Actions).
 
@@ -77,4 +92,6 @@ curl -X POST \
     -H "Authorization: Bearer <access_token>" \
     "https://<app_name>.scm.azurewebsites.net/api/zipdeploy"
 ```
-That's it!
+
+[Next](/docs/5-add-Identity.md)
+
