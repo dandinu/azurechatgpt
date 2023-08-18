@@ -20,6 +20,7 @@ We've built a Solution Accelerator to empower your workforce with ChatGPT on Azu
 
 # Getting Started
 
+1. [ Tutorial](https://tensorthinker.hashnode.dev/privategpt-a-guide-to-using-azures-version-of-chatgpt)
 1. [ Introduction](/docs/1-introduction.md)
 1. [Provision Azure Resources](/docs/2-provision-azure-resources.md)
 1. [Run ChatGPT on Azure solution accelerator from your local machine](/docs/3-run-locally.md)
