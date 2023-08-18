@@ -23,6 +23,8 @@ Open the settings menu and select `Configuration`
 In the `Application settings` tab, add new entries for `AUTH_GITHUB_ID` and `AUTH_GITHUB_SECRET` or any other environment variables you are missing, under App settings, and save the changes
 Remember to keep these variables secure - they provide access to your GitHub/AD app and should not be disclosed publicly.
 
+![](/images/app-services-variables.png)
+
 # 🗝️ Configure secrets in your GitHub repository
 
 ### 1. AZURE_CREDENTIALS

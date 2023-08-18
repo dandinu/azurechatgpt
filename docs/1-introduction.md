@@ -1,3 +1,6 @@
+# 👨‍🏫 Tutorial
+The original repo and Azure templates are no longer available since the fork. However, I have created a complete tutorial on how to deploy ChatGPT manually. You can find it [here](https://tensorthinker.hashnode.dev/privategpt-a-guide-to-using-azures-version-of-chatgpt).
+
 # 📘 Prerequisites
 
 1. [Azure OpenAI](https://azure.microsoft.com/en-us/products/cognitive-services/openai-service/): To deploy and run ChatGPT on Azure, you'll need an Azure subscription with access to the Azure OpenAI service. Request access [here](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR7en2Ais5pxKtso_Pz4b1_xUOFA5Qk1UWDRBMjg0WFhPMkIzTzhKQ1dWNyQlQCN0PWcu). Once you have access, follow the instructions in this [link](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/how-to/create-resource?pivots=web-portal) to deploy the gpt-35-turbo or gpt-4 models.
