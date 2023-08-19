@@ -34,8 +34,7 @@ The GitHub workflow requires a secret named `AZURE_CREDENTIALS` to authenticate 
 1. Create a service principal with the Contributor role on the resource group that contains the Azure App Service.
 
    ```
-   az ad sp create-for-rbac
-      --name <NAME OF THE CREDENTIAL> --role contributor --scopes /subscriptions/<SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP> --sdk-auth --output json
+   az ad sp create-for-rbac --name <NAME OF THE CREDENTIAL> --role contributor --scopes /subscriptions/<SUBSCRIPTION ID>/resourceGroups/<RESOURCE GROUP> --sdk-auth --output json
    ```
 
 2. Copy the JSON output from the command.
